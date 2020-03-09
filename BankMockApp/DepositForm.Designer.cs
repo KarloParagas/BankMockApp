@@ -44,6 +44,7 @@
             this.ConfirmDepositBtn.TabIndex = 14;
             this.ConfirmDepositBtn.Text = "Confirm Deposit";
             this.ConfirmDepositBtn.UseVisualStyleBackColor = true;
+            this.ConfirmDepositBtn.Click += new System.EventHandler(this.ConfirmDepositBtn_Click);
             // 
             // DepositAmountTxt
             // 
@@ -94,6 +95,7 @@
             this.Controls.Add(this.DepositToCBox);
             this.Name = "DepositForm";
             this.Text = "Deposit";
+            this.Load += new System.EventHandler(this.DepositForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
