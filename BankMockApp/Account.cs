@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BankMockApp
 {
-    class Account
+    public class Account
     {
         [Key]
         public int CustomerId { get; set; }
