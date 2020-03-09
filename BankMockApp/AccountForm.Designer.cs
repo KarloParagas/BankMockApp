@@ -55,6 +55,7 @@
             this.DeleteAccountBtn.TabIndex = 32;
             this.DeleteAccountBtn.Text = "Delete Account";
             this.DeleteAccountBtn.UseVisualStyleBackColor = true;
+            this.DeleteAccountBtn.Click += new System.EventHandler(this.DeleteAccountBtn_Click);
             // 
             // WithdrawBtn
             // 
@@ -65,6 +66,7 @@
             this.WithdrawBtn.TabIndex = 23;
             this.WithdrawBtn.Text = "Withdraw";
             this.WithdrawBtn.UseVisualStyleBackColor = true;
+            this.WithdrawBtn.Click += new System.EventHandler(this.WithdrawBtn_Click);
             // 
             // SavingsBalanceLbl
             // 
@@ -130,6 +132,7 @@
             this.LogoutBtn.TabIndex = 16;
             this.LogoutBtn.Text = "Log Out";
             this.LogoutBtn.UseVisualStyleBackColor = true;
+            this.LogoutBtn.Click += new System.EventHandler(this.LogoutBtn_Click);
             // 
             // DepositBtn
             // 
@@ -140,6 +143,7 @@
             this.DepositBtn.TabIndex = 19;
             this.DepositBtn.Text = "Deposit";
             this.DepositBtn.UseVisualStyleBackColor = true;
+            this.DepositBtn.Click += new System.EventHandler(this.DepositBtn_Click);
             // 
             // TransferBtn
             // 
@@ -150,6 +154,7 @@
             this.TransferBtn.TabIndex = 20;
             this.TransferBtn.Text = "Transfer";
             this.TransferBtn.UseVisualStyleBackColor = true;
+            this.TransferBtn.Click += new System.EventHandler(this.TransferBtn_Click);
             // 
             // label6
             // 
@@ -230,6 +235,7 @@
             this.Controls.Add(this.label1);
             this.Name = "AccountForm";
             this.Text = "Account";
+            this.Load += new System.EventHandler(this.AccountForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
