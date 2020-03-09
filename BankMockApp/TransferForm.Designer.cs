@@ -63,6 +63,7 @@
             this.ConfirmDepositBtn.TabIndex = 22;
             this.ConfirmDepositBtn.Text = "Confirm Transfer";
             this.ConfirmDepositBtn.UseVisualStyleBackColor = true;
+            this.ConfirmDepositBtn.Click += new System.EventHandler(this.ConfirmDepositBtn_Click);
             // 
             // TransferAmountTxt
             // 
@@ -100,6 +101,7 @@
             this.TransferFromCBox.Name = "TransferFromCBox";
             this.TransferFromCBox.Size = new System.Drawing.Size(104, 21);
             this.TransferFromCBox.TabIndex = 18;
+            this.TransferFromCBox.SelectedValueChanged += new System.EventHandler(this.TransferFromCBox_SelectedValueChanged);
             // 
             // TransferForm
             // 
@@ -115,6 +117,7 @@
             this.Controls.Add(this.TransferFromCBox);
             this.Name = "TransferForm";
             this.Text = "Transfer";
+            this.Load += new System.EventHandler(this.TransferForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
