@@ -12,9 +12,12 @@ namespace BankMockApp
 {
     public partial class WithdrawForm : Form
     {
-        public WithdrawForm()
+        public Account _user { get; set; }
+
+        public WithdrawForm(Account u)
         {
             InitializeComponent();
+            _user = u;
         }
     }
 }

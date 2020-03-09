@@ -12,9 +12,12 @@ namespace BankMockApp
 {
     public partial class DepositForm : Form
     {
-        public DepositForm()
+        public Account _user { get; set; }
+
+        public DepositForm(Account u)
         {
             InitializeComponent();
+            _user = u;
         }
     }
 }
