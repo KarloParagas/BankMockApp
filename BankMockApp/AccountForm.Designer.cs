@@ -229,7 +229,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "AccountForm";
-            this.Text = "AccountForm";
+            this.Text = "Account";
             this.ResumeLayout(false);
             this.PerformLayout();
 
