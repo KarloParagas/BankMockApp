@@ -44,6 +44,7 @@
             this.ConfirmWithdrawalBtn.TabIndex = 27;
             this.ConfirmWithdrawalBtn.Text = "Confirm Withdrawal";
             this.ConfirmWithdrawalBtn.UseVisualStyleBackColor = true;
+            this.ConfirmWithdrawalBtn.Click += new System.EventHandler(this.ConfirmWithdrawalBtn_Click);
             // 
             // WithdrawAmountTxt
             // 
@@ -94,6 +95,7 @@
             this.Controls.Add(this.WithdrawFromCBox);
             this.Name = "WithdrawForm";
             this.Text = "Withdraw";
+            this.Load += new System.EventHandler(this.WithdrawForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
