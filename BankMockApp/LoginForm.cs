@@ -22,8 +22,11 @@ namespace BankMockApp
             BankContext account = new BankContext();
             if (debitNum.Text != string.Empty && pinNum.Text != string.Empty)
             {
+                //If user tried to log in with hyphens on their input, remove it
+                string userDebitNumInput = debitNum.Text.Replace("-", "");
+
                 //Check if a user with that debit card number exists
-                Account userExist = account.Accounts.FirstOrDefault(a => a.DebitCardNumber == debitNum.Text);
+                Account userExist = account.Accounts.FirstOrDefault(a => a.DebitCardNumber == userDebitNumInput);
 
                 //If a user with that debit card number DOES exist 
                 if (userExist != null)
