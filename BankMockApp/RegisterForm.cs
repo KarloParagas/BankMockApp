@@ -26,7 +26,7 @@ namespace BankMockApp
                 Account customer = new Account()
                 {
                     AccountNumber = GenerateAccountNumber(),
-                    DebitCardNumber = DebitCardNumTxt.Text,
+                    DebitCardNumber = DebitCardNumTxt.Text.Replace("-", ""),
                     FirstName = FirstNameTxt.Text,
                     LastName = LastNameTxt.Text,
                     Email = EmailTxt.Text,
@@ -73,8 +73,11 @@ namespace BankMockApp
 
         private bool isDebitCardValid()
         {
+            //If user inputs hyphens in their debit card, remove it
+            string debitNumInput = DebitCardNumTxt.Text.Replace("-", "");
+
             long validLong;
-            if (DebitCardNumTxt.Text.Length == 16 && long.TryParse(DebitCardNumTxt.Text, out validLong) && DebitCardNumTxt.Text.All(char.IsDigit) == true)
+            if (debitNumInput.Length == 16 && long.TryParse(debitNumInput, out validLong) && debitNumInput.All(char.IsDigit) == true)
             {
                 return true;
             }
@@ -89,7 +92,7 @@ namespace BankMockApp
             {
                 return true;
             }
-            MessageBox.Show("Phone number must consist of only numbers and 10 digits in length without '-' or spaces");
+            MessageBox.Show("Phone number must consist of only numbers and 10 digits in length");
             return false;
         }
 
