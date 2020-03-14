@@ -20,7 +20,7 @@ namespace BankMockApp
         private void loginBtn_Click(object sender, EventArgs e)
         {
             BankContext account = new BankContext();
-            if (debitNum.Text != string.Empty && pinNum.Text != string.Empty)
+            if (isPresent() == true)
             {
                 //If user tried to log in with hyphens on their input, remove it
                 string userDebitNumInput = debitNum.Text.Replace("-", "");
@@ -29,10 +29,10 @@ namespace BankMockApp
                 Account userExist = account.Accounts.FirstOrDefault(a => a.DebitCardNumber == userDebitNumInput);
 
                 //If a user with that debit card number DOES exist 
-                if (userExist != null)
+                if (doesUserExist(userExist) == true)
                 {
                     //If that user with the same debit card also matches the password on file 
-                    if (userExist.Pin == pinNum.Text)
+                    if (doesUserPinMatch(userExist, pinNum.Text) == true)
                     {
                         debitNum.Text = "";
                         pinNum.Text = "";
@@ -44,20 +44,43 @@ namespace BankMockApp
                         AccountForm form = new AccountForm(userExist);
                         form.ShowDialog();
                     }
-                    else
-                    {
-                        MessageBox.Show("Pin doesn't match");
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Account doesn't exist");
                 }
             }
-            else
+        }
+
+        private bool doesUserPinMatch(Account userExist, string text)
+        {
+            if (pinNum.Text.Length > 4) 
             {
-                MessageBox.Show("Please fill out the required fields");
+                MessageBox.Show("Pin must be 4 digits");
+                return false;
             }
+            if (userExist.Pin == pinNum.Text) 
+            {
+                return true;
+            }
+            MessageBox.Show("Pin doesn't match");
+            return false;
+        }
+
+        private bool doesUserExist(Account userExist)
+        {
+            if (userExist != null) 
+            {
+                return true;
+            }
+            MessageBox.Show("Account doesn't exist");
+            return false;
+        }
+
+        private bool isPresent()
+        {
+            if (debitNum.Text != string.Empty && pinNum.Text != string.Empty) 
+            {
+                return true;
+            }
+            MessageBox.Show("Please fill out the required fields");
+            return false;
         }
 
         private void regBtn_Click(object sender, EventArgs e)
