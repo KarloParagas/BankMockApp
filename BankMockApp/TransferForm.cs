@@ -21,6 +21,11 @@ namespace BankMockApp
             _user = u;
         }
 
+        /// <summary>
+        /// Populates the combobox drop down list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TransferForm_Load(object sender, EventArgs e)
         {
             //Disables the combobox for manual text input
@@ -32,6 +37,12 @@ namespace BankMockApp
             TransferFromCBox.Items.Add("Savings");
         }
 
+        /// <summary>
+        /// Automatically populates the transfer to's textbox based
+        /// on what the user has selected in transfer from's combobox.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void TransferFromCBox_SelectedValueChanged(object sender, EventArgs e)
         {
             if (TransferFromCBox.SelectedItem.Equals("Checking"))
@@ -44,7 +55,13 @@ namespace BankMockApp
             }
         }
 
-        private void ConfirmDepositBtn_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Transfers the desired amount to the user's checking
+        /// or savings account.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void ConfirmTransferBtn_Click(object sender, EventArgs e)
         {
             if (isDataValid() == true)
             {
@@ -91,6 +108,10 @@ namespace BankMockApp
             }
         }
 
+        /// <summary>
+        /// Generates a reciept of the transaction.
+        /// </summary>
+        /// <param name="amount"></param>
         private void GenerateReceipt(double amount)
         {
             //Create a receipt of the transaction
@@ -116,6 +137,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user exceeds their balance for the transfer amount.
+        /// Returns false if the amount exceeds their balance.
+        /// </summary>
+        /// <returns></returns>
         private bool doesTransferAmountExceedBalance()
         {
             double transferAmount = Convert.ToDouble(TransferAmountTxt.Text);
@@ -138,6 +164,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user provided a valid transfer amount.
+        /// Returns false if user doesn't provides an invalid amount.
+        /// </summary>
+        /// <returns></returns>
         private bool IsValidNumber()
         {
             double validDouble;
@@ -149,6 +180,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user has filled out all of the required fields.
+        /// Returns false if user submits an empty form.
+        /// </summary>
+        /// <returns></returns>
         private bool isPresent()
         {
             if (TransferFromCBox.Text != "" && TransferToTxt.Text != "" && TransferAmountTxt.Text != "")

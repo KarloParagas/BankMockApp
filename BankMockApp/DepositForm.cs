@@ -21,6 +21,11 @@ namespace BankMockApp
             _user = u;
         }
 
+        /// <summary>
+        /// Populates the combobox drop down list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DepositForm_Load(object sender, EventArgs e)
         {
             //Disables the combobox for manual text input
@@ -31,6 +36,11 @@ namespace BankMockApp
             DepositToCBox.Items.Add("Savings");
         }
 
+        /// <summary>
+        /// Deposits the amount to the user's account.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ConfirmDepositBtn_Click(object sender, EventArgs e)
         {
             if (isDataValid() == true)
@@ -75,6 +85,10 @@ namespace BankMockApp
             }
         }
 
+        /// <summary>
+        /// Generates a reciept of the transaction.
+        /// </summary>
+        /// <param name="amount"></param>
         private void GenerateReceipt(double amount)
         {
             //Create a receipt of the transaction
@@ -101,6 +115,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user inputs a valid amount.
+        /// Returns false if the user inputs an invalid amount.
+        /// </summary>
+        /// <returns></returns>
         private bool IsValidNumber()
         {
             double validDouble;
@@ -112,6 +131,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user has filled out all of the required fields.
+        /// Returns false if user submits an empty form.
+        /// </summary>
+        /// <returns></returns>
         private bool isPresent()
         {
             if (DepositToCBox.Text != "" && DepositAmountTxt.Text != "")

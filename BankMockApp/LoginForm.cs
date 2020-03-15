@@ -17,6 +17,11 @@ namespace BankMockApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Logs the user in if their account is registered in the database.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void loginBtn_Click(object sender, EventArgs e)
         {
             BankContext account = new BankContext();
@@ -48,6 +53,12 @@ namespace BankMockApp
             }
         }
 
+        /// <summary>
+        /// Checks to see if the user's pin match from the database.
+        /// </summary>
+        /// <param name="userExist"></param>
+        /// <param name="text"></param>
+        /// <returns></returns>
         private bool doesUserPinMatch(Account userExist, string text)
         {
             if (pinNum.Text.Length > 4) 
@@ -63,6 +74,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if there's a user. Returns false is there's no user.
+        /// </summary>
+        /// <param name="userExist"></param>
+        /// <returns></returns>
         private bool doesUserExist(Account userExist)
         {
             if (userExist != null) 
@@ -73,6 +89,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Validates for an empty form submission. Returns false
+        /// if user doesn't fill out the required textboxes.
+        /// </summary>
+        /// <returns></returns>
         private bool isPresent()
         {
             if (debitNum.Text != string.Empty && pinNum.Text != string.Empty) 

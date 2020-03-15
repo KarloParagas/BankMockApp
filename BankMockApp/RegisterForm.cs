@@ -18,6 +18,11 @@ namespace BankMockApp
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Registers a customer account
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void RegisterBtn_Click(object sender, EventArgs e)
         {
             if (isDataValid() == true)
@@ -61,6 +66,10 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user provided a valid pin number.
+        /// </summary>
+        /// <returns></returns>
         private bool isPinNumberValid()
         {
             if (pinTxt.Text.Length == 4 && pinTxt.Text.All(char.IsDigit) == true)
@@ -71,6 +80,10 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user provided a valid debit card number.
+        /// </summary>
+        /// <returns></returns>
         private bool isDebitCardValid()
         {
             //If user inputs hyphens in their debit card, remove it
@@ -85,6 +98,10 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user provided a valid phone number.
+        /// </summary>
+        /// <returns></returns>
         private bool isPhoneNumberValid()
         {
             long validLong;
@@ -96,6 +113,10 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user provided a valid email address.
+        /// </summary>
+        /// <returns></returns>
         private bool isEmailValid()
         {
             if (EmailTxt.Text.Contains("@") && EmailTxt.Text.Contains("."))
@@ -106,6 +127,10 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user meets the minimum deposit amount set.
+        /// </summary>
+        /// <returns></returns>
         private bool isFirstDepositValid()
         {
             double validDouble;
@@ -128,6 +153,10 @@ namespace BankMockApp
             }
         }
 
+        /// <summary>
+        /// Checks to see if the user filled out all of the empty fields.
+        /// </summary>
+        /// <returns></returns>
         private bool isPresent()
         {
             if (!string.IsNullOrWhiteSpace(FirstNameTxt.Text) && !string.IsNullOrWhiteSpace(LastNameTxt.Text)
@@ -141,6 +170,10 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Generates a random account number.
+        /// </summary>
+        /// <returns></returns>
         private int GenerateAccountNumber()
         {
             int minNum = 100000000;

@@ -21,6 +21,11 @@ namespace BankMockApp
             _user = u;
         }
 
+        /// <summary>
+        /// Populates the combobox drop down list.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WithdrawForm_Load(object sender, EventArgs e)
         {
             //Disables the combobox for text input
@@ -31,6 +36,12 @@ namespace BankMockApp
             WithdrawFromCBox.Items.Add("Savings");
         }
 
+        /// <summary>
+        /// Withdraws the desired amount to the user's checking
+        /// or savings account.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void ConfirmWithdrawalBtn_Click(object sender, EventArgs e)
         {
             if (isDataValid() == true)
@@ -74,6 +85,10 @@ namespace BankMockApp
             }
         }
 
+        /// <summary>
+        /// Generates a reciept of the transaction.
+        /// </summary>
+        /// <param name="amount"></param>
         private void GenerateReceipt(double amount)
         {
             //Create a receipt of the transaction
@@ -99,6 +114,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user exceeds their balance for the withdraw amount.
+        /// Returns false if the amount exceeds their balance.
+        /// </summary>
+        /// <returns></returns>
         private bool doesWithdrawAmountExceedBalance()
         {
             double withDrawAmount = Convert.ToDouble(WithdrawAmountTxt.Text);
@@ -121,6 +141,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user provided a valid amount.
+        /// Returns false if user doesn't provides an invalid amount.
+        /// </summary>
+        /// <returns></returns>
         private bool IsValidNumber()
         {
             double validDouble;
@@ -132,6 +157,11 @@ namespace BankMockApp
             return false;
         }
 
+        /// <summary>
+        /// Checks to see if the user has filled out all of the required fields.
+        /// Returns false if user submits an empty form.
+        /// </summary>
+        /// <returns></returns>
         private bool isPresent()
         {
             if (WithdrawFromCBox.Text != "" && WithdrawAmountTxt.Text != "")
