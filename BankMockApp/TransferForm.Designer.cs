@@ -30,7 +30,7 @@
         {
             this.TransferToTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.ConfirmDepositBtn = new System.Windows.Forms.Button();
+            this.ConfirmTransferBtn = new System.Windows.Forms.Button();
             this.TransferAmountTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,16 +54,16 @@
             this.label3.TabIndex = 23;
             this.label3.Text = "Transfer To:";
             // 
-            // ConfirmDepositBtn
+            // ConfirmTransferBtn
             // 
-            this.ConfirmDepositBtn.Location = new System.Drawing.Point(102, 113);
-            this.ConfirmDepositBtn.Margin = new System.Windows.Forms.Padding(1);
-            this.ConfirmDepositBtn.Name = "ConfirmDepositBtn";
-            this.ConfirmDepositBtn.Size = new System.Drawing.Size(102, 22);
-            this.ConfirmDepositBtn.TabIndex = 22;
-            this.ConfirmDepositBtn.Text = "Confirm Transfer";
-            this.ConfirmDepositBtn.UseVisualStyleBackColor = true;
-            this.ConfirmDepositBtn.Click += new System.EventHandler(this.ConfirmDepositBtn_Click);
+            this.ConfirmTransferBtn.Location = new System.Drawing.Point(102, 113);
+            this.ConfirmTransferBtn.Margin = new System.Windows.Forms.Padding(1);
+            this.ConfirmTransferBtn.Name = "ConfirmTransferBtn";
+            this.ConfirmTransferBtn.Size = new System.Drawing.Size(102, 22);
+            this.ConfirmTransferBtn.TabIndex = 22;
+            this.ConfirmTransferBtn.Text = "Confirm Transfer";
+            this.ConfirmTransferBtn.UseVisualStyleBackColor = true;
+            this.ConfirmTransferBtn.Click += new System.EventHandler(this.ConfirmTransferBtn_Click);
             // 
             // TransferAmountTxt
             // 
@@ -110,7 +110,7 @@
             this.ClientSize = new System.Drawing.Size(225, 155);
             this.Controls.Add(this.TransferToTxt);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.ConfirmDepositBtn);
+            this.Controls.Add(this.ConfirmTransferBtn);
             this.Controls.Add(this.TransferAmountTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,7 +127,7 @@
 
         private System.Windows.Forms.TextBox TransferToTxt;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button ConfirmDepositBtn;
+        private System.Windows.Forms.Button ConfirmTransferBtn;
         private System.Windows.Forms.TextBox TransferAmountTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
