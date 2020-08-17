@@ -1,4 +1,7 @@
 # BankMockApp
+![Annotation 2020-08-17 111318](https://user-images.githubusercontent.com/49321258/90429754-1f5cdc00-e07b-11ea-8342-2d37a0e25684.png)  
+![Annotation 2020-08-17 111440](https://user-images.githubusercontent.com/49321258/90429826-40253180-e07b-11ea-811a-d754cee277e3.png)
+
 A database driven bank app using Entity Framework that allows users to register for an account with their debit card. Once logged in they will be able to log in and deposit, transfer, and withdraw money from their account.
 
 # Getting Started
